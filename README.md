@@ -1,6 +1,6 @@
 # ascii2svg
 
-:smile: ascii2svg
+:smile: ascii2svg creates .svg images from an ascii text
 
 [![CircleCI](https://circleci.com/gh/moul/ascii2svg.svg?style=shield)](https://circleci.com/gh/moul/ascii2svg)
 [![GoDoc](https://godoc.org/moul.io/ascii2svg?status.svg)](https://godoc.org/moul.io/ascii2svg)
@@ -17,8 +17,27 @@
 ## Usage
 
 ```console
-$ ascii2svg -h
-...
+$ cat SECURITY.md | ascii2svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect x="0" y="0" width="800" height="600" fill="black" stroke="white"></rect>
+    <foreignObject x="15" y="5" width="770" height="590">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="width:800px; height:600px; overflow-y:auto; color: white; font-size: 20px;">
+        <pre># Reporting security issues
+
+I take security seriously. If you discover a security issue, please bring it to my attention right away!
+
+### Reporting a Vulnerability
+
+Please **DO NOT** file a public issue, instead send your report privately to m+security-report@42.am.
+
+Security reports are greatly appreciated and I will publicly thank you for it, although I keep your name confidential if you request it.
+</pre>
+      </div>
+    </foreignObject>
+  </g>
+</svg>
 ```
 
 ## Install
