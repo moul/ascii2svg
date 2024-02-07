@@ -4,7 +4,7 @@ executors:
   golang:
     working_directory: /go/src/moul.io/ascii2svg
     docker:
-      - image: circleci/golang:1.16
+      - image: circleci/golang:1.17
     environment:
       GO111MODULE: "on"
       DOCKER_IMAGE: moul/ascii2svg
@@ -15,11 +15,11 @@ executors:
 
 orbs:
   codecov: codecov/codecov@1.0.5
-  moul: moul/build@1.5.0
+  moul: moul/build@1.16.0
   retry: moul/retry@0.6.0
   docker: circleci/docker@0.5.13
   #dl: moul/dl@1.7.0
-  tools: gotest/tools@0.0.10
+  tools: gotest/tools@0.0.14
 
 jobs:
   go-build:
